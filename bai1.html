@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function chuoiCoDoDaiLonNhat(arr) {
+            if (arr.length === 0) {
+                return [];
+            }
+            // Tìm độ dài lớn nhất trong mảng
+            let maxLength = arr[0].length;
+            for (let i = 1; i < arr.length; i++) {
+                const currentLength = arr[i].length;
+                if (currentLength > maxLength) {
+                    maxLength = currentLength;
+                }
+            }
+            // Tạo mảng mới chứa các chuỗi có độ dài lớn nhất
+            const result = [];
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i].length === maxLength) {
+                    result.push(arr[i]);
+                }
+            }
+            return result;
+            
+        }
+        getStringHasMaxLength=['aba', 'aa', 'ad', 'c', 'vcd'];
+        const result = chuoiCoDoDaiLonNhat(getStringHasMaxLength);
+        console.log(result); 
+
+    </script>
+</body>
+
+</html>
